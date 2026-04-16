@@ -1,0 +1,9 @@
+{
+  "name": "anything-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "dev:web": "npm --prefix apps/web run dev",
+    "typecheck:web": "npm --prefix apps/web run typecheck"
+  }
+}
