@@ -1,8 +1,4 @@
-import * as SecureStore from 'expo-secure-store';
-import { fetch as expoFetch } from 'expo/fetch';
-
 const originalFetch = fetch;
-const authKey = `${process.env.EXPO_PUBLIC_PROJECT_GROUP_ID}-jwt`;
 
 const getURLFromArgs = (...args: Parameters<typeof fetch>) => {
   const [urlArg] = args;
@@ -32,14 +28,14 @@ const isSecondPartyURL = (url: string) => {
   return url.startsWith('/_create/');
 };
 
-type Params = Parameters<typeof expoFetch>;
+type Params = Parameters<typeof fetch>;
 const fetchToWeb = async function fetchWithHeaders(...args: Params) {
   const firstPartyURL = process.env.EXPO_PUBLIC_BASE_URL;
   const secondPartyURL = process.env.EXPO_PUBLIC_PROXY_BASE_URL;
   const [input, init] = args;
   const url = getURLFromArgs(input, init);
   if (!url) {
-    return expoFetch(input, init);
+    return originalFetch(input, init);
   }
 
   if (isFileURL(url)) {
@@ -49,7 +45,7 @@ const fetchToWeb = async function fetchWithHeaders(...args: Params) {
   const isExternalFetch = !isFirstPartyURL(url);
   // we should not add headers to requests that don't go to our own server
   if (isExternalFetch) {
-    return expoFetch(input, init);
+    return originalFetch(input, init);
   }
 
   let finalInput = input;
@@ -57,7 +53,7 @@ const fetchToWeb = async function fetchWithHeaders(...args: Params) {
   if (typeof input === 'string') {
     finalInput = input.startsWith('/') ? `${baseURL}${input}` : input;
   } else {
-    return expoFetch(input, init);
+    return originalFetch(input, init);
   }
 
   const initHeaders = init?.headers ?? {};
@@ -76,19 +72,7 @@ const fetchToWeb = async function fetchWithHeaders(...args: Params) {
     }
   }
 
-  const auth = await SecureStore.getItemAsync(authKey)
-    .then((auth) => {
-      return auth ? JSON.parse(auth) : null;
-    })
-    .catch(() => {
-      return null;
-    });
-
-  if (auth) {
-    finalHeaders.set('authorization', `Bearer ${auth.jwt}`);
-  }
-
-  return expoFetch(finalInput, {
+  return originalFetch(finalInput, {
     ...init,
     headers: finalHeaders,
   });
