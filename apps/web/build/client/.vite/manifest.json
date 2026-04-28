@@ -1,0 +1,107 @@
+{
+  "_PolymorphicComponent-bne2PHFm.js": {
+    "file": "assets/PolymorphicComponent-bne2PHFm.js",
+    "name": "PolymorphicComponent",
+    "imports": [
+      "_chunk-OE4NN4TA-DXCUBbyB.js"
+    ]
+  },
+  "_chunk-OE4NN4TA-DXCUBbyB.js": {
+    "file": "assets/chunk-OE4NN4TA-DXCUBbyB.js",
+    "name": "chunk-OE4NN4TA"
+  },
+  "_index-CG64Auz7.js": {
+    "file": "assets/index-CG64Auz7.js",
+    "name": "index",
+    "imports": [
+      "_chunk-OE4NN4TA-DXCUBbyB.js",
+      "_index-D7AetLs4.js"
+    ]
+  },
+  "_index-D7AetLs4.js": {
+    "file": "assets/index-D7AetLs4.js",
+    "name": "index",
+    "imports": [
+      "_chunk-OE4NN4TA-DXCUBbyB.js"
+    ]
+  },
+  "_layout-ukJd8m7D.js": {
+    "file": "assets/layout-ukJd8m7D.js",
+    "name": "layout",
+    "imports": [
+      "_PolymorphicComponent-bne2PHFm.js",
+      "_index-CG64Auz7.js",
+      "_chunk-OE4NN4TA-DXCUBbyB.js"
+    ]
+  },
+  "_react-BHzW20kU.js": {
+    "file": "assets/react-BHzW20kU.js",
+    "name": "react",
+    "imports": [
+      "_chunk-OE4NN4TA-DXCUBbyB.js"
+    ]
+  },
+  "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx": {
+    "file": "assets/entry.client-BCYBeOFB.js",
+    "name": "entry.client",
+    "src": "node_modules/@react-router/dev/dist/config/defaults/entry.client.tsx",
+    "isEntry": true,
+    "imports": [
+      "_chunk-OE4NN4TA-DXCUBbyB.js",
+      "_index-D7AetLs4.js"
+    ]
+  },
+  "src/app/__create/not-found.tsx?__react-router-build-client-route": {
+    "file": "assets/not-found-FA0OuM7h.js",
+    "name": "not-found",
+    "src": "src/app/__create/not-found.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_PolymorphicComponent-bne2PHFm.js",
+      "_chunk-OE4NN4TA-DXCUBbyB.js"
+    ]
+  },
+  "src/app/__create/social-dev-shim/page.jsx?__react-router-build-client-route": {
+    "file": "assets/page-CETcf3gP.js",
+    "name": "page",
+    "src": "src/app/__create/social-dev-shim/page.jsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_PolymorphicComponent-bne2PHFm.js",
+      "_chunk-OE4NN4TA-DXCUBbyB.js",
+      "_layout-ukJd8m7D.js",
+      "_react-BHzW20kU.js",
+      "_index-CG64Auz7.js",
+      "_index-D7AetLs4.js"
+    ]
+  },
+  "src/app/page.jsx?__react-router-build-client-route": {
+    "file": "assets/page-Cuwa3EjJ.js",
+    "name": "page",
+    "src": "src/app/page.jsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_PolymorphicComponent-bne2PHFm.js",
+      "_chunk-OE4NN4TA-DXCUBbyB.js",
+      "_layout-ukJd8m7D.js",
+      "_index-CG64Auz7.js",
+      "_index-D7AetLs4.js"
+    ]
+  },
+  "src/app/root.tsx?__react-router-build-client-route": {
+    "file": "assets/root-DNIetcUE.js",
+    "name": "root",
+    "src": "src/app/root.tsx?__react-router-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_PolymorphicComponent-bne2PHFm.js",
+      "_chunk-OE4NN4TA-DXCUBbyB.js",
+      "_react-BHzW20kU.js",
+      "_index-CG64Auz7.js",
+      "_index-D7AetLs4.js"
+    ],
+    "css": [
+      "assets/root-D6DiebrL.css"
+    ]
+  }
+}
